@@ -31,7 +31,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CollectionViewCell" id="KcQ-Q5-QUS">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CollectionViewCell" id="KcQ-Q5-QUS" customClass="CollectionViewCell" customModule="CollectionMultipleSelect" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="170" height="170"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -49,6 +49,9 @@
                                             <constraint firstAttribute="bottom" secondItem="uRx-JH-tHD" secondAttribute="bottom" id="ufN-j0-ZRi"/>
                                             <constraint firstItem="uRx-JH-tHD" firstAttribute="leading" secondItem="KcQ-Q5-QUS" secondAttribute="leading" id="z1u-jp-svi"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="imageSelection" destination="uRx-JH-tHD" id="tdC-Sv-uU9"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
