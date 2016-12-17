@@ -22,9 +22,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="VKI-yd-ONg">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="WfX-M2-55H">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="0.0" id="WfX-M2-55H">
                                     <size key="itemSize" width="170" height="170"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -38,7 +38,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="170" height="170"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uRx-JH-tHD">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="seImage.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="uRx-JH-tHD">
                                                     <rect key="frame" x="0.0" y="0.0" width="170" height="170"/>
                                                 </imageView>
                                             </subviews>
@@ -49,22 +49,30 @@
                                             <constraint firstAttribute="bottom" secondItem="uRx-JH-tHD" secondAttribute="bottom" id="ufN-j0-ZRi"/>
                                             <constraint firstItem="uRx-JH-tHD" firstAttribute="leading" secondItem="KcQ-Q5-QUS" secondAttribute="leading" id="z1u-jp-svi"/>
                                         </constraints>
+                                        <size key="customSize" width="170" height="170"/>
                                         <connections>
                                             <outlet property="imageSelection" destination="uRx-JH-tHD" id="tdC-Sv-uU9"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="ppa-M4-XRW"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="dfD-sf-gBV"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="VKI-yd-ONg" secondAttribute="trailing" id="8d0-BU-p3c"/>
-                            <constraint firstItem="VKI-yd-ONg" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="C3N-ir-XBO"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="VKI-yd-ONg" secondAttribute="bottom" id="Fij-7h-d14"/>
-                            <constraint firstItem="VKI-yd-ONg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="pO6-d1-2ZI"/>
+                            <constraint firstAttribute="trailing" secondItem="VKI-yd-ONg" secondAttribute="trailing" id="ZUC-tL-dfq"/>
+                            <constraint firstItem="VKI-yd-ONg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="gPf-Fb-sOW"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="VKI-yd-ONg" secondAttribute="bottom" id="hvc-Jj-0xY"/>
+                            <constraint firstItem="VKI-yd-ONg" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="n87-gu-cDy"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="4XF-Hy-cys"/>
+                    <connections>
+                        <outlet property="colelctionView" destination="VKI-yd-ONg" id="iru-WL-Bfp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -89,4 +97,7 @@
             <point key="canvasLocation" x="397.60000000000002" y="792.95352323838085"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="seImage.jpg" width="400" height="400"/>
+    </resources>
 </document>

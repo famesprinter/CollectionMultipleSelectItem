@@ -9,8 +9,13 @@
 import UIKit
 
 class ViewController: UIViewController {
+    // MARK: - IBOutlet
+    @IBOutlet weak var colelctionView: UICollectionView!
+    
     // MARK: - Variable
     let viewModel = ViewModel()
+    let cvCellIdentifier = "CollectionViewCell"
+    var cvCell: CollectionViewCell?
 
     // MARK: - Life Cycle
     override func viewDidLoad() {
@@ -28,7 +33,22 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        cvCell = collectionView.dequeueReusableCell(withReuseIdentifier: cvCellIdentifier,
+                                                    for: indexPath) as? CollectionViewCell
+        if let cvCell = cvCell {
+            return cvCell
+        }
         return UICollectionViewCell()
+    }
+}
+
+// MARK: - UICollectionView Layout
+extension ViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let wAndH: CGFloat = (collectionView.bounds.size.width)/2
+        return CGSize(width: wAndH, height: wAndH)
     }
 }
 
