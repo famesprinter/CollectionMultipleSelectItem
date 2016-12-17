@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     // MARK: - IBOutlet
-    @IBOutlet weak var colelctionView: UICollectionView!
+    @IBOutlet weak var collectionView: UICollectionView!
     
     // MARK: - Variable
     let viewModel = ViewModel()
@@ -21,6 +21,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        collectionView.allowsMultipleSelection = true
     }
 }
 
@@ -39,6 +40,11 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
             return cvCell
         }
         return UICollectionViewCell()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        didSelectItemAt indexPath: IndexPath) {
+        print("IndexPath: \(indexPath.row)")
     }
 }
 
